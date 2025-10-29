@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravat Patra - Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Tech Background Canvas -->
+    <canvas id="techBackground"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <a href="#home">
+                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer hexagon -->
+                            <path d="M25 2 L45 13 L45 37 L25 48 L5 37 L5 13 Z" 
+                                  fill="none" 
+                                  stroke="url(#gradient1)" 
+                                  stroke-width="2"/>
+                            <!-- Inner design -->
+                            <circle cx="25" cy="25" r="12" fill="url(#gradient2)" opacity="0.2"/>
+                            <text x="25" y="32" 
+                                  font-family="Arial, sans-serif" 
+                                  font-size="20" 
+                                  font-weight="bold" 
+                                  fill="url(#gradient1)" 
+                                  text-anchor="middle">PP</text>
+                            <!-- Gradients -->
+                            <defs>
+                                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:1" />
+                                </linearGradient>
+                                <radialGradient id="gradient2">
+                                    <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:0" />
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+                <div class="social-icons-nav">
+                    <a href="https://github.com/Pravat-21?tab=repositories" target="_blank" class="nav-social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href=https://www.linkedin.com/in/pravat-patra-49725b1b2/" target="_blank" class="nav-social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@pravatpatra2015" target="_blank" class="nav-social-icon" title="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="nav-social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="pravatpatra1997@gmail.com" class="nav-social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+
+                </div>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#skills" class="nav-link">Skills & Tools</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#hobby" class="nav-link">Hobby</a></li>
+                <li><a href="#achievement" class="nav-link">Achievement</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <div class="home-grid">
+                <!-- Left Side - About Section -->
+                <div class="about-section">
+                    <div class="intro-text">
+                        <h1 class="glitch" data-text="Pravat Patra">Pravat Patra</h1>
+                        <h2 class="typing-container">
+                            <span class="static-text">Data </span>
+                            <span class="typing-text" id="role-text">Scientist</span>
+                        </h2>
+                        <p class="subtitle">Transforming data into actionable insights</p>
+                        
+                        <!-- Positive Words About Section -->
+                        <div class="about-words">
+                            <div class="word-item">
+                                <i class="fas fa-brain"></i>
+                                <div>
+                                    <h3>Innovative Thinker</h3>
+                                    <p>Creative problem solver with a passion for finding unique data-driven solutions</p>
+                                </div>
+                            </div>
+                            <div class="word-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h3>Results-Oriented</h3>
+                                    <p>Focused on delivering measurable impact through advanced analytics and ML</p>
+                                </div>
+                            </div>
+                            <div class="word-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <h3>Continuous Learner</h3>
+                                    <p>Always exploring cutting-edge technologies and methodologies in data science</p>
+                                </div>
+                            </div>
+                        </div>
+
+        
+                        
+                    </div>
+                </div>
+
+                <!-- Right Side - Profile Image -->
+                <div class="profile-section">
+                    <div class="profile-3d-container">
+                        <div class="profile-image-wrapper">
+                            <img src="image/photo_edited2.jpg" alt="Pravat Patra" class="profile-image" id="profile-image">
+                            <div class="profile-ring"></div>
+                            <div class="profile-glow"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+     <section id="about" class="about-me-section">
+        <div class="container">
+            
+            
+            <h2 class="section-title"><i class="fas fa-user-astronaut"></i> About Me</h2>
+    
+                
+                <div class="about-text">
+                    <p>
+                        I am <strong>Pravat Patra</strong>, a consulting data analyst and researcher passionate about 
+                        working with organizations that want to make effective use of their data, from 
+                        the first ideas around what you want to measure and how to capture data 
+                        accurately, through data preparation, analysis and management, all the way to 
+                        impactful presentation of insights. I can support each step of the process to enable your organization in making 
+                        evidence-driven decisions or share insights with their audiences. I also offer 
+                        training in Tableau and data visualization best practices.
+                    </p>
+                    
+                    <p>
+                        I am available for <strong>short-term projects</strong> and <strong>part-time longer-term engagements</strong>, 
+                        bringing expertise in data science, machine learning, and advanced analytics to help 
+                        transform your data into actionable business intelligence.
+                    </p>
+                </div>
+
+                <!-- Resume Download Section -->
+                <div class="resume-download-section">
+                    <h3 class="subsection-title">
+                    <i class="fas fa-download"></i>
+                    Download Resume/CV
+                    </h3>
+                    <p class="resume-subtitle">Choose the version tailored for your needs</p>
+                    <div class="resume-buttons">
+                        <a href="PRAVAT_DATA_ANALYST_2025.pdf" download class="resume-btn">
+                            <i class="fas fa-file-download"></i>
+                            <div class="resume-btn-content">
+                                <span class="resume-btn-title">Data Scientist</span>
+                                <span class="resume-btn-desc">ML & AI focused</span>
+                            </div>
+                        </a>
+                        <a href="PRAVAT_DATA_ANALYST_2025.pdf" download class="resume-btn">
+                            <i class="fas fa-file-download"></i>
+                            <div class="resume-btn-content">
+                                <span class="resume-btn-title">Data Analyst</span>
+                                <span class="resume-btn-desc">Analytics & BI focused</span>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+                <h3 class="subsection-title">
+                    <i class="fas fa-chart-area"></i>
+                    Statistics
+                    </h3>
+                    <div class="about-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>15+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-code"></i>
+                        <h3>10+</h3>
+                        <p>Technologies</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <h3>2+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <h3>72+</h3>
+                        <p>No. of DataSet work with</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <h3>20+</h3>
+                        <p>Case Study</p>
+                    </div>
+                </div>
+
+                <!-- Work Experience Section -->
+                <div class="work-experience-section">
+                    
+                    <h3 class="subsection-title">
+                    <i class="fas fa-briefcase"></i>
+                    Work-Experience
+                    </h3>
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2023 - 2024</div>
+                                <h4>Data Science Intern</h4>
+                                <p class="company-name"><i class="fas fa-building"></i>iNeuron Intelligence Pvt Ltd</p>
+                                <ul class="experience-list">
+                                    <li>Analyzed large datasets to identify trends and provide actionable insights</li>
+                                    <li>Created interactive dashboards using Tableau and Power BI for stakeholders</li>
+                                    <li>Automated reporting processes saving a lots of hours</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            
+            <h2 class="section-title"><i class="fas fa-brain"></i> Skills & Tools</h2>
+            <p class="section-description">My technical arsenal for building data-driven solutions</p>
+            
+            <!-- Skills Categories -->
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Technical Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="soft-skill-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Python Programming</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL & Database Management</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Data Visualization</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Statistical Data Analysis</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-search"></i>
+                            <span>Exploratory Data Analysis</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard Creation</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Data Storytelling</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>Process Automation</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Model Building & Deployment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="soft-skill-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Critical Thinking</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Business Understanding</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-tasks"></i>
+                            <span>Project Management</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-book-open"></i>
+                            <span>Data Storytelling</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-users"></i>
+                            <span>Cross-functional Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="tools-section-wrapper">
+                <h3 class="subsection-title">
+                    <i class="fas fa-laptop-code""></i>
+                    Technology Stack
+                </h3>
+                
+                
+                <div class="tools-grid">
+                    <!-- Data Storage & Databases -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-database"></i>
+                            <h4>Data Storage & Databases</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> MySQL</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> MongoDB</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Snowflake</div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics & BI Tools -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Data Analytics & BI</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> Power BI</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Tableau</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Excel / Google Sheets</div>
+                        </div>
+                    </div>
+
+                    <!-- Machine Learning & AI -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-robot"></i>
+                            <h4>Machine Learning & AI</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> Scikit-learn</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> TensorFlow</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Keras</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> PyTorch</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> XGBoost</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Hugging Face</div>
+                        </div>
+                    </div>
+
+                    <!-- Data Manipulation -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-table"></i>
+                            <h4>Data Manipulation</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> Pandas</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> NumPy</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> SciPy</div>
+                        </div>
+                    </div>
+
+                    <!-- Visualization Libraries -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Data Visualization</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> Matplotlib</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Seaborn</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Plotly</div>
+                        </div>
+                    </div>
+
+                    <!-- MLOps & Deployment -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-cogs"></i>
+                            <h4>MLOps & Deployment</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> MLflow</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> DVC</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> DagsHub</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Docker</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> AWS</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Render</div>
+                        </div>
+                    </div>
+
+                    <!-- APIs & Data Collection -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-plug"></i>
+                            <h4>APIs & Data Collection</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> Flask / FastAPI</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> BeautifulSoup</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Scrapy</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Postman</div>
+                        </div>
+                    </div>
+
+                    <!-- Development Tools -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-tools"></i>
+                            <h4>Development Tools</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> Jupyter Notebook</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> VS Code</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Git & GitHub</div>
+                        </div>
+                    </div>
+
+                    <!-- NLP Tools -->
+                    <div class="tool-category">
+                        <div class="tool-category-header">
+                            <i class="fas fa-language"></i>
+                            <h4>NLP Tools</h4>
+                        </div>
+                        <div class="tool-items">
+                            <div class="tool-item"><i class="fas fa-circle"></i> SpaCy</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> NLTK</div>
+                            <div class="tool-item"><i class="fas fa-circle"></i> Transformers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            
+            <h2 class="section-title"><i class="fas fa-cogs"></i> Services I Offer</h2>
+            <p class="section-description">Comprehensive data science solutions tailored to your business needs</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Core Data Science</h3>
+                    <p>End-to-end data science solutions from data collection and cleaning to advanced statistical analysis and predictive modeling.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Machine Learning & AI</h3>
+                    <p>Build intelligent systems with supervised, unsupervised learning, deep learning, NLP, and computer vision solutions.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Data Visualization & Business Insights</h3>
+                    <p>Transform complex data into compelling visual stories using Tableau, Power BI, and custom dashboards for actionable insights.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>MLOps & Model Deployment</h3>
+                    <p>Streamline ML workflows with automated pipelines, model versioning, monitoring, and cloud deployment using MLflow, Docker, and AWS.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business & Industry-Specific Services</h3>
+                    <p>Customized analytics solutions for finance, healthcare, retail, and e-commerce with domain-specific insights and strategies.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Research & Consulting</h3>
+                    <p>Strategic data science consulting, research design, experimental analysis, and technical advisory services for complex projects.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Freelance / Client-Focused Deliverables</h3>
+                    <p>Flexible engagement models for short-term projects, part-time collaborations, and custom solutions with clear deliverables and timelines.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Teaching & Training</h3>
+                    <p>Hands-on training in Python, machine learning, data visualization, and analytics with customized workshops and mentorship programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            
+            <h2 class="section-title"><i class="fas fa-chart-line"></i>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="image/cheko.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiZjI2NWUwMWMtYjY0YS00MTkxLWFkZjMtZWMwM2I3NGRkNDRlIiwidCI6ImY4N2I2ZjgyLTIxNTUtNDc5Zi1iYThiLTRkNTdkN2Q2OWUwZiJ9" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Pravat-21/Czechoslovakia-Banking-Data-Analysis-Project" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Czechoslovakia Banking Financial Data Analysis</h3>
+                        <p>Created a beautiful report using Power BI tool which can play an important Role in Critical decision Making which leads to the ultimate Profits of Banks while giving satisfactory services to all the clients.</p>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Snowflake-SQL</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="image/sample.jpg" alt="Project 2">
+                        <div class="project-overlay">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiN2I1N2ZjMmItNGE5OC00ODkyLTgwNWUtMGYyNDAyZGIwYjRiIiwidCI6ImY4N2I2ZjgyLTIxNTUtNDc5Zi1iYThiLTRkNTdkN2Q2OWUwZiJ9" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Pravat-21/Retail-Data-Analysis-Project" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Retail Data Analysis</h3>
+                        <p>Created a interactive where some important insights has been found which can lead to take some crucial decisions with respect to future campaigns , products and so on .</p>
+                        <div class="project-tags">
+                            <span class="tag">Retail</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Jupyter Notebook</span>
+                            <span class="tag">Job Schedule</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="image/Store_sales.png" alt="Project 3">
+                        <div class="project-overlay">
+                            
+                            <a href="https://github.com/Pravat-21/INTERNSHIP-PROJECT--Store-Sales-Prediction" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Store Sales Prediction</h3>
+                        <p>Created an application which can predict the sales amount of different stores  according to the provided inputs. Used some classical machine learning tasks like Data Exploration, Data Cleaning, Feature Engineering, Model Building and Model Testing.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Exploratory Data Analysis</span>
+                            <span class="tag">Modular Coding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="image/hr_dash.png" alt="Project 4">
+                        <div class="project-overlay">
+                            <a href="https://public.tableau.com/app/profile/pravat.patra2029/viz/tableau_HR_dashboard/HRdashboard_main?publish=yes" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Pravat-21/HR-Dashboard" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HR Dashboard using Tableau</h3>
+                        <p>Created a beautiful dashboard using Tableau, HR Dashboard, where various components such as Demographic profile of employee, Status, Location Information are added.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Visualization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-pen-nib"></i>My Blog</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="image/NLP_blog.png" alt="Blog 1">
+                        <span class="blog-category">NLP</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Apr 18, 2025</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3>A Story of the Rise of Natural Language Processing</h3>
+                        <p>Explore the fundamentals of Natural Language Processing, From simple pattern matchers to massive neural networks with billions of parameters, the history of NLP is a testament to human curiosity, perseverance, and creativity.</p>
+                        <a href="https://medium.com/@pravatpatra2015/a-story-of-the-rise-of-natural-language-processing-afdeca664864" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="image/archi_mcp.png" alt="Blog 2">
+                        <span class="blog-category">MCP</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Oct 14, 2025</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Understanding MCP Architecture</h3>
+                        <p>In a world where AI tools multiply faster than we can name them, MCP’s architecture is the infrastructure that prevents total collapse. It’s the plumbing nobody sees but everyone relies on.</p>
+                        <a href="https://medium.com/@pravatpatra2015/understanding-mcp-architecture-the-plumbing-behind-ais-integration-revolution-bb4f5539dbee" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="image/encode.png" alt="Blog 3">
+                        <span class="blog-category">Encoding Techniques</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> May 03, 2023</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Encoding for Nominal Data</h3>
+                        <p>A comprehensive guide for how to encode categorical features spcially nominal features. All of us know that In machine learning algorithm , our model can’t understand categorical data. It can only work with numerical data .</p>
+                        <a href="https://medium.com/@pravatpatra2015/encoding-for-nominal-data-categorical-59f5ef708e80" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobby Section -->
+    <section id="hobby" class="hobby-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-gamepad"></i> Hobbies & Interests</h2>
+            <p class="section-description">Beyond data science, here's what keeps me inspired and energized</p>
+            <div class="hobby-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Chess & Strategic Puzzles</h3>
+                    <p>I enjoy the mental challenge of chess and strategic puzzles, which sharpen my analytical thinking and problem-solving skills.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Reading Books</h3>
+                    <p>An avid reader exploring diverse genres from technical literature to philosophy, constantly expanding my knowledge and perspectives.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Writing Articles</h3>
+                    <p>I love sharing knowledge through writing, creating technical articles and blogs to help others learn and grow in data science.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Research About Ancient Things</h3>
+                    <p>Fascinated by history and archaeology, I research ancient civilizations and their contributions to modern knowledge.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3>Cycling</h3>
+                    <p>Cycling keeps me physically active and mentally refreshed, offering the perfect balance to my tech-focused work life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Section -->
+    <section id="achievement" class="achievement-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Achievements & Certificates</h2>
+            <p class="section-description">Milestones and recognitions that mark my journey</p>
+            
+            <!-- Achievements Subsection -->
+            <div class="achievement-subsection"></div>
+                <h3 class="subsection-title">
+                    <i class="fas fa-trophy"></i>
+                    Achievements
+                </h3>
+                
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-image">
+                            <img src="image/convo_rec.jpg" alt="Achievement 1">
+                            <div class="achievement-overlay">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                        </div>
+                        <div class="achievement-content">
+                            <div class="achievement-badge">🥇</div>
+                            <h3>Recieved Gold Medal of Excellence</h3>
+                            <p class="achievement-date"><i class="far fa-calendar"></i> 01 March,2025</p>
+                            <p>Awarded by the University for securing the highest CGPA in the Master’s program, recognizing outstanding academic performance, dedication, and excellence.
+                            A testament to consistent hard work, analytical skills, and a passion for learning.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-image">
+                            <img src="image/gate_25.png" alt="Achievement 2">
+                            <div class="achievement-overlay">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="achievement-content">
+                            <div class="achievement-badge">⭐</div>
+                            <h3>GATE-2025 qualified in Data Science & AI</h3>
+                            <p class="achievement-date"><i class="far fa-calendar"></i> Apr 2025</p>
+                            <p>Successfully qualified the GATE 2025 examination, demonstrating strong analytical aptitude, problem-solving skills, and in-depth understanding of core concepts in Data Science & AI.</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <!-- Certificates Subsection -->
+            <div class="certificates-subsection">
+                
+                <div class="achievement-subsection"></div>
+                <h3 class="subsection-title">
+                    <i class="fas fa-award"></i>
+                    Certificates
+                </h3>
+                
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                        <div class="certificate-ribbon">
+                            <span>Verified</span>
+                        </div>
+                        <div class="certificate-glow"></div>
+                        <div class="certificate-icon-wrapper">
+                            <div class="certificate-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="certificate-particles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Data Science Intern</h4>
+                            <p class="certificate-issuer"><i class="fas fa-building"></i>iNeuron Intelligence Pvt Ltd</p>
+                            <div class="certificate-meta">
+                                <span class="certificate-date"><i class="far fa-calendar-check"></i> Feb, 2024</span>
+                                <span class="certificate-level">Advanced</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/16Atf9t8mUa4ecHWjr-S19dzRL3xddxKH/view?usp=sharing" class="verify-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Verify Credential</span>
+                                </span>
+                                <span class="btn-shine"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-ribbon">
+                            <span>Verified</span>
+                        </div>
+                        <div class="certificate-glow"></div>
+                        <div class="certificate-icon-wrapper">
+                            <div class="certificate-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="certificate-particles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Supervised Machine Learning: Regression</h4>
+                            <p class="certificate-issuer"><i class="fas fa-graduation-cap"></i> Coursera</p>
+                            <div class="certificate-meta">
+                                <span class="certificate-date"><i class="far fa-calendar-check"></i>Jun, 2023</span>
+                                <span class="certificate-level">Intermediate</span>
+                            </div>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/85QT5864TTDA" class="verify-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Verify Credential</span>
+                                </span>
+                                <span class="btn-shine"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-ribbon">
+                            <span>Verified</span>
+                        </div>
+                        <div class="certificate-glow"></div>
+                        <div class="certificate-icon-wrapper">
+                            <div class="certificate-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="certificate-particles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Data Analytics Job Simulation</h4>
+                            <p class="certificate-issuer"><i class="fas fa-building"></i> Deloitte</p>
+                            <div class="certificate-meta">
+                                <span class="certificate-date"><i class="far fa-calendar-check"></i>Mar, 2025</span>
+                                <span class="certificate-level">Professional</span>
+                            </div>
+                            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_bCNXw2TuLjWkZJt3s_1741430014770_completion_certificate.pdf" class="verify-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Verify Credential</span>
+                                </span>
+                                <span class="btn-shine"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-ribbon">
+                            <span>Verified</span>
+                        </div>
+                        <div class="certificate-glow"></div>
+                        <div class="certificate-icon-wrapper">
+                            <div class="certificate-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="certificate-particles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4> Data Visualisation: Empowering	Business with Effective	Insights</h4>
+                            <p class="certificate-issuer"><i class="fas fa-building"></i> TATA Group</p>
+                            <div class="certificate-meta">
+                                <span class="certificate-date"><i class="far fa-calendar-check"></i>Mar, 2025</span>
+                                <span class="certificate-level">Professional</span>
+                            </div>
+                            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_bCNXw2TuLjWkZJt3s_1741771531957_completion_certificate.pdf" class="verify-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Verify Credential</span>
+                                </span>
+                                <span class="btn-shine"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-ribbon">
+                            <span>Verified</span>
+                        </div>
+                        <div class="certificate-glow"></div>
+                        <div class="certificate-icon-wrapper">
+                            <div class="certificate-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="certificate-particles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Exploratory Data Analysis for Machine Learning</h4>
+                            <p class="certificate-issuer"><i class="fas fa-graduation-cap"></i> Coursera</p>
+                            <div class="certificate-meta">
+                                <span class="certificate-date"><i class="far fa-calendar-check"></i>Apr, 2023</span>
+                                <span class="certificate-level">Advanced</span>
+                            </div>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/MUTGUMVJD5B5" class="verify-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Verify Credential</span>
+                                </span>
+                                <span class="btn-shine"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> Get In Touch</h2>
+            
+            <div class="contact-content-centered">
+                <!-- Left side: Contact Info -->
+                <div class="contact-info-centered reveal">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>pravatpatra1997@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 801 667 4064</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Chitra, Ramtarak Hat, East Medinipur, West Bengal, 721151, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side: Contact Form -->
+                <form class="contact-form reveal" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        Send Message
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Pravat Patra. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#skills">Skills & Tools</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#hobby">Hobby</a>
+                <a href="#achievement">Achievement</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
