@@ -379,36 +379,59 @@ if (roleText) {
     setTimeout(typeRole, 1000);
 }
 
-// Contact form handling
-const contactForm = document.getElementById('contact-form');
+// Contact form handling with animations
+const contactFormSubmit = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Create mailto link
-    const mailtoLink = `mailto:contact@email.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
-    
-    // Show success message
-    const button = contactForm.querySelector('button');
-    const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-    button.style.background = '#4ecdc4';
-    
-    // Open mailto link
-    window.location.href = mailtoLink;
-    
-    // Reset form and button after 3 seconds
-    setTimeout(() => {
-        contactForm.reset();
-        button.innerHTML = originalText;
-        button.style.background = '';
-    }, 3000);
-});
+if (contactFormSubmit) {
+    contactFormSubmit.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:pravatpatra1997@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        
+        // Get button and show loading state
+        const button = contactFormSubmit.querySelector('.btn-submit');
+        const originalText = button.innerHTML;
+        
+        // Add loading animation
+        button.classList.add('loading');
+        button.innerHTML = '<i class="fas fa-spinner"></i> Sending...';
+        
+        // Simulate sending delay
+        setTimeout(() => {
+            // Show success message
+            button.classList.remove('loading');
+            button.classList.add('success');
+            button.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
+            
+            // Open mailto link
+            window.location.href = mailtoLink;
+            
+            // Reset form and button after 3 seconds
+            setTimeout(() => {
+                contactFormSubmit.reset();
+                button.classList.remove('success');
+                button.innerHTML = originalText;
+                
+                // Trigger re-animation of form groups
+                const formGroups = contactFormSubmit.querySelectorAll('.form-group');
+                formGroups.forEach(group => {
+                    group.style.opacity = '0';
+                    group.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        group.style.opacity = '1';
+                        group.style.transform = 'translateY(0)';
+                    }, 100);
+                });
+            }, 3000);
+        }, 1000);
+    });
+}
 
 // Smooth scroll for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -477,6 +500,23 @@ if (footerText && footerText.textContent.includes('2025')) {
 console.log('%c👋 Hello, Developer!', 'color: #00d9ff; font-size: 24px; font-weight: bold;');
 console.log('%cInterested in the code? Check out my GitHub!', 'color: #4ecdc4; font-size: 14px;');
 
+// Trigger contact form animation check on page load
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            const sectionTop = contactSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            // If contact section is visible on load, animate it
+            if (sectionTop < windowHeight) {
+                const event = new Event('scroll');
+                window.dispatchEvent(event);
+            }
+        }
+    }, 500);
+});
+
 // ========================================
 // REVEAL ELEMENTS ON SCROLL (for contact section etc.)
 // ========================================
@@ -496,3 +536,74 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll(); // Run once on load
+
+// ========================================
+// CONTACT FORM ANIMATIONS ON SCROLL
+// ========================================
+function initContactFormAnimations() {
+    const contactSection = document.getElementById('contact');
+    const contactFormElement = document.getElementById('contact-form');
+    
+    if (!contactSection || !contactFormElement) return;
+    
+    let formAnimated = false;
+    
+    function animateContactForm() {
+        if (formAnimated) return;
+        
+        const sectionTop = contactSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        // More generous trigger point
+        if (sectionTop < windowHeight - 100) {
+            formAnimated = true;
+            
+            console.log('Animating contact form...'); // Debug log
+            
+            // Animate form groups
+            const formGroups = contactFormElement.querySelectorAll('.form-group');
+            const submitContainer = contactFormElement.querySelector('.form-submit-container');
+            
+            console.log('Found form groups:', formGroups.length); // Debug log
+            
+            formGroups.forEach((group, index) => {
+                setTimeout(() => {
+                    group.style.opacity = '1';
+                    group.style.transform = 'translateY(0)';
+                    console.log(`Animated group ${index + 1}`); // Debug log
+                }, 150 * (index + 1));
+            });
+            
+            if (submitContainer) {
+                setTimeout(() => {
+                    submitContainer.style.opacity = '1';
+                    submitContainer.style.transform = 'translateY(0)';
+                    console.log('Animated submit button'); // Debug log
+                }, 150 * (formGroups.length + 1));
+            }
+        }
+    }
+    
+    // Check on scroll
+    window.addEventListener('scroll', animateContactForm);
+    
+    // Check when clicking contact link
+    const contactLinks = document.querySelectorAll('a[href="#contact"]');
+    contactLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            setTimeout(animateContactForm, 800);
+        });
+    });
+    
+    // Initial checks
+    setTimeout(animateContactForm, 300);
+    setTimeout(animateContactForm, 1000);
+    setTimeout(animateContactForm, 2000);
+}
+
+// Initialize form animations when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactFormAnimations);
+} else {
+    initContactFormAnimations();
+}
