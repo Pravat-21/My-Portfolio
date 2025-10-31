@@ -38,6 +38,12 @@ class Node {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(0, 217, 255, 0.5)';
         ctx.fill();
+        
+        // Add glow
+        //ctx.shadowBlur = 10;
+        //ctx.shadowColor = 'rgba(0, 217, 255, 0.6)';
+        //ctx.fill();
+        //ctx.shadowBlur = 0;
     }
 }
 
@@ -153,9 +159,44 @@ class PulsingCircle {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.strokeStyle = `rgba(0, 217, 255, ${this.opacity})`;
         ctx.lineWidth = 2;
+        //ctx.shadowBlur = 15;
+        //ctx.shadowColor = `rgba(0, 217, 255, ${this.opacity})`;
         ctx.stroke();
+        //ctx.shadowBlur = 0;
     }
 }
+
+// Floating particles for depth
+/*class FloatingParticle {
+    constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5 + 0.3;
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 217, 255, ${this.opacity})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `rgba(0, 217, 255, ${this.opacity * 0.8})`;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+    }
+}*/
 
 // Initialize arrays
 let nodes = [];
@@ -163,6 +204,7 @@ let binaryRain = [];
 let codeSnippets = [];
 let gridLines = [];
 let pulsingCircles = [];
+//let floatingParticles = [];
 
 function initNodes() {
     nodes = [];
@@ -170,14 +212,15 @@ function initNodes() {
     codeSnippets = [];
     gridLines = [];
     pulsingCircles = [];
+    //floatingParticles = [];
 
-    // Create nodes
+    // Create more nodes for better visibility
     for (let i = 0; i < 50; i++) {
         nodes.push(new Node());
     }
 
     // Create binary rain
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 40; i++) {
         binaryRain.push(new BinaryRain());
     }
 
@@ -192,10 +235,15 @@ function initNodes() {
         gridLines.push(new GridLine(false));
     }
 
-    // Create pulsing circles
+    // Create more pulsing circles
     for (let i = 0; i < 5; i++) {
         pulsingCircles.push(new PulsingCircle());
     }
+
+    // Create floating particles
+    //for (let i = 0; i < 50; i++) {
+        //floatingParticles.push(new FloatingParticle());
+    //}
 }
 
 // Draw connections between nodes
@@ -210,6 +258,7 @@ function drawConnections() {
                 ctx.beginPath();
                 ctx.moveTo(nodes[i].x, nodes[i].y);
                 ctx.lineTo(nodes[j].x, nodes[j].y);
+                //const opacity = (1 - distance / 200) * 0.5;
                 ctx.strokeStyle = `rgba(0, 217, 255, ${0.2 * (1 - distance / 150)})`;
                 ctx.lineWidth = 1;
                 ctx.stroke();
@@ -220,8 +269,15 @@ function drawConnections() {
 
 // Animation loop
 function animate() {
+    // Darker fade for better trail effect
     ctx.fillStyle = 'rgba(10, 10, 15, 0.1)';
     ctx.fillRect(0, 0, width, height);
+
+    // Draw and update floating particles first (background layer)
+    //floatingParticles.forEach(particle => {
+        //particle.update();
+        //particle.draw();
+    //});
 
     // Draw and update grid lines (disabled)
     // gridLines.forEach(line => {
@@ -266,6 +322,48 @@ function animate() {
 // Initialize and start animation
 initNodes();
 animate();
+
+// ========================================
+// THEME TOGGLE FUNCTIONALITY
+// ========================================
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
+
+// Check for saved theme preference or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+
+// Apply saved theme on page load
+if (currentTheme === 'light') {
+    body.classList.add('light-theme');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+}
+
+// Theme toggle functionality
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        
+        // Update icon with animation
+        themeIcon.style.transform = 'rotate(360deg) scale(0)';
+        
+        setTimeout(() => {
+            if (body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+            
+            themeIcon.style.transform = 'rotate(0deg) scale(1)';
+        }, 150);
+    });
+}
 
 // ========================================
 // ORIGINAL PORTFOLIO FUNCTIONALITY
